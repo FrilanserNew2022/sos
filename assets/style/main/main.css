@@ -1,7 +1,17 @@
-.img-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+/* Error: expected selector.
+ *   ,
+ * 1 | ,main {
+ *   | ^
+ *   '
+ *   main.scss 1:1  root stylesheet */
 
-/*# sourceMappingURL=main.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: expected selector.\a   \2577 \a 1 \2502  ,main {\d\a   \2502  ^\a   \2575 \a   main.scss 1:1  root stylesheet";
+}

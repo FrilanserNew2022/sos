@@ -82,6 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 ._container {
@@ -105,11 +106,13 @@ body.open {
 
 .header {
   position: absolute;
+  max-height: 100px;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto;
+  margin: 0 auto;
+  z-index: 5;
 }
 .header * {
   font-size: 1rem;
@@ -150,9 +153,6 @@ body.open {
 
 .header__item {
   transition: all 0.5s;
-}
-.header__item:hover {
-  color: #FFB548;
 }
 .header__item:not(:first-child) {
   margin-left: 46.5px;
@@ -252,18 +252,22 @@ body.open {
     position: absolute;
     transform: translate(0, -1000px);
     transition: all 1s;
-    margin: auto;
+    margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 0;
     z-index: 2;
   }
   .header__menu.open {
+    width: 100vw;
+    height: 100vh;
     opacity: 1;
     transform: translate(0, 0);
+    z-index: 50;
   }
   .header__list {
     padding: 0 40px;
     flex-direction: column;
+    z-index: 10;
   }
   .header__item {
     align-items: center;
@@ -279,7 +283,7 @@ body.open {
     display: block;
     width: 23.5px;
     height: 17.5px;
-    z-index: 10;
+    z-index: 50;
   }
   .central__line {
     display: block;
@@ -323,6 +327,70 @@ body.open {
     display: none;
   }
 }
+.main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.img__big {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: transform 0.5s;
+}
+
+.main__carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.img__big-first {
+  background: url("../img/bg-first.png") 0 0/100% 100% no-repeat;
+}
+
+.img__big-second {
+  background: url("../img/bg-second.webp") 0 0/100% 100% no-repeat;
+}
+
+.img__big-third {
+  background: url("../img/bg-third.png") 0 0/100% 100% no-repeat;
+}
+
+.img__big-four {
+  background: url("../img/bg-four.png") 0 0/100% 100% no-repeat;
+}
+
+@media (max-width: 425px) {
+  .img__big-first {
+    background: url("../img/bg-first.png") -232px 0/cover no-repeat;
+  }
+  .img__big-second {
+    background: url("../img/bg-second.webp") -100px 0/cover no-repeat;
+  }
+  .img__big-third {
+    background: url("../img/bg-third.png") -200px 0/cover no-repeat;
+  }
+  .img__big-four {
+    background: url("../img/bg-four.png") -400px 0/cover no-repeat;
+  }
+}
+.main__liner-gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #151515 1%, transparent 99%);
+  z-index: 2;
+}
+
+.main__buttons-container {
+  position: relative;
+  margin-top: 400px;
+  z-index: 3;
+}
+
 /*
 background: linear-gradient( rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.5) ), url('/img/back/home-back.jpg');
 background-repeat: no-repeat;
