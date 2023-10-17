@@ -77,7 +77,7 @@
 .main__container {
   position: relative;
   z-index: 3;
-  margin-top: 325px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,9 +181,6 @@
 }
 
 @media (max-width: 1439.98px) {
-  .main__container {
-    margin-top: 228px;
-  }
   .main__body-title {
     font-size: 33px;
   }

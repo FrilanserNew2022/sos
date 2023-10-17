@@ -1,0 +1,202 @@
+.page__rectangle {
+  position: relative;
+  height: 87vh;
+  background: url("../img/bg-third.png") 0 0/100% 100% no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectangle__gradient {
+  background: radial-gradient(81.01% 53.57% at 30.85% 53.65%, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.00) 19.2%, rgba(4, 5, 6, 0.52) 47.48%, #080A0B 99.74%);
+}
+
+.rectangle__container {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  z-index: 4;
+}
+
+.rectangle__empty-flex {
+  flex: 1 1 auto;
+}
+
+.rectangle__content-flex {
+  flex-basis: 597px;
+}
+
+.rectangle__subtitle {
+  margin-bottom: 8.7px;
+}
+
+.rectangle__title {
+  margin-bottom: 70.75px;
+}
+
+.rectangle__features-text {
+  display: flex;
+}
+
+.rectangle__progress-bar {
+  margin-right: 32px;
+}
+
+.rectangle__circle {
+  top: calc(50% - 5.5px);
+  left: -30px;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: #FFFFFF 1px solid;
+  position: absolute;
+}
+
+.rectangle__circle-first {
+  background: #FFFFFF;
+}
+
+.rectangle__circle-second {
+
+}
+
+.rectangle__circle-third {
+
+}
+
+.rectangle__declaration-container {
+  height: 416px;
+  position: relative;
+  &:before {
+    top: 12px;
+    left: -24.5px;
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 0;
+    background: #FFFFFF;
+    animation: 10s 1 normal progressBar;
+    animation-fill-mode: forwards;
+  }
+}
+
+
+@keyframes progressBar {
+  50% {
+    height: 135px;
+  }
+
+  100% {
+    height: 270px;
+  }
+}
+
+.rectangle__text-container {
+  &:not(:first-child) {
+    margin-top: 27px;
+  }
+}
+
+.content__title {
+  color: #FFB548;
+  font-family: Bebas Neue;
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.content__text {
+  margin-top: 5px;
+  height: auto;
+  color: #FFF;
+  text-align: justify;
+  font-size: 1.5em;
+  font-weight: 400;
+  transform: translate(0, 0);
+  visibility: visible;
+  line-height: 22px; /* 122.222% */
+  transition: all 0.75s;
+  &.close {
+    transform: translate(-100%, 0);
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 1279.98px) {
+  .content__title {
+    font-size: 1.833333333333333em;
+  }
+  .content__text {
+    font-size: 1.6666666666666666666em;
+  }
+  @keyframes progressBar {
+    50% {
+      height: 115px;
+    }
+
+    100% {
+      height: 235px;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .page__rectangle {
+    background-size: cover;
+    height: auto;
+  }
+  .rectangle__empty-flex {
+    display: none;
+  }
+  .rectangle__container {
+    padding: 50px 15px 50px 50px;
+    justify-content: start;
+  }
+
+  .rectangle__declaration-container {
+    height: auto;
+  }
+}
+
+@media (max-width: 599.98px) {
+  .page__rectangle {
+    background-position: -300px 0;
+  }
+  .rectangle__gradient {
+    background: rgb(0,0,0);
+    background: radial-gradient(50.47% 44.87% at 31.45% 40.62%, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.00) 0%, rgba(4, 5, 6, 0.52) 25.99%, rgba(6, 7, 8, 0.74) 65.03%, #080A0B 99.74%);
+  }
+  @keyframes progressBar {
+    50% {
+      height: 35.03458646616541%;
+    }
+
+    100% {
+      height: 71.08543859649123%;
+    }
+  }
+}
+
+@media (max-width: 375.98px) {
+  .rectangle__declaration-container:before {
+    top: 20px;
+  }
+  @keyframes progressBar {
+    50% {
+      height: 34.03458646616541%;
+    }
+
+    100% {
+      height: 70.08543859649123%;
+    }
+  }
+}
+
+@media (min-width: 1440.98px) {
+  .page__rectangle {
+    height: 100vh;
+  }
+}

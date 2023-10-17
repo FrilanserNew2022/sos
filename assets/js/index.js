@@ -51,3 +51,13 @@ document.querySelector('.main__button-next').addEventListener('click', () => {
 document.querySelector('.current').addEventListener('', () => {
     console.log(1)
 })
+
+setTimeout(() => {
+    document.querySelector('.rectangle__circle-second').style.background = '#FFFFFF';
+    document.querySelector('.content__text-second').classList.remove('close')
+}, 4800)
+
+setTimeout(() => {
+    document.querySelector('.rectangle__circle-third').style.background = '#FFFFFF'
+    document.querySelector('.content__text-third').classList.remove('close')
+}, 8800)
