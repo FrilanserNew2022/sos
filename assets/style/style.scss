@@ -1,23 +1,13 @@
-@import "null";
+@import "_null";
 
-@import "header/header";
+@import "header/_header";
 
-@import "main/main";
+@import "main/_main";
 
-@import "royal/royal";
+@import "royal/_royal";
 
-@import "rectangle/rectangle";
+@import "rectangle/_rectangle.scss";
 
+@import "requirements/_requirements";
 
-
-
-
-
-
-/*
-background: linear-gradient( rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.5) ), url('/img/back/home-back.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed;
-background-position: top;
-*/
+@import "quotes/_quotes";

@@ -1,0 +1,75 @@
+.page__requirements {
+  background: url("../img/bg-four.png");
+  position: relative;
+}
+
+.requirements__gradient {
+  background: radial-gradient(136.03% 54.57% at 50% 48.04%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 60.63%, #080A0B 99.74%);
+}
+
+.requirements__container {
+  padding-top: 145px;
+  padding-bottom: 170px;
+}
+
+.requirements__subtitle {
+  text-align: center;
+}
+
+.requirements__title {
+  text-align: center;
+}
+
+.requirements__content {
+  margin-top: 130px;
+  display: flex;
+}
+
+.requirements__table {
+  flex-basis: 50%;
+}
+
+.table__grid {
+  display: grid;
+  grid-template-areas: "os processor" "memory storage" "graphics graphics";
+}
+
+.table__grid-title {
+  color: #FFB548;
+  font-family: Bebas Neue;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+
+.table__grid-text {
+  color: #FFF;
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 22px; /* 122.222% */
+}
+
+.table__grid-cell {
+  padding: 15px 19px 22px 19px;
+}
+
+.table__grid-os {
+  grid-area: os;
+}
+
+.table__grid-processor {
+  grid-area: processor;
+}
+
+.table__grid-memory {
+  grid-area: memory;
+}
+
+.table__grid-storage {
+  grid-area: storage;
+}
+
+.table__grid-graphics {
+  grid-area: graphics;
+}

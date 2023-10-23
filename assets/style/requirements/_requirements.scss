@@ -1,0 +1,119 @@
+.page__requirements {
+  background: url("../assets/img/bg-four.png");
+  position: relative;
+}
+
+.requirements__gradient {
+  background: radial-gradient(81.01% 53.57% at 30.85% 38.65%, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.00) 19.2%, rgba(4, 5, 6, 0.52) 47.48%, #080A0B 99.74%);
+}
+
+.requirements__container {
+  position: relative;
+  padding-top: 10%;
+  padding-bottom: 12%;
+  z-index: 3;
+}
+
+.requirements__subtitle {
+  text-align: center;
+}
+
+.requirements__title {
+  text-align: center;
+
+}
+
+.requirements__content {
+  margin-top: 10.3%;
+  display: flex;
+}
+
+.requirements__table {
+  flex-basis: 50%;
+}
+
+.table__grid {
+  display: grid;
+  grid-template-areas: 'os processor' 'memory storage' 'graphics graphics';
+}
+
+.table__grid-title {
+  color: #FFB548;
+  font-family: Bebas Neue;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+
+.table__grid-text {
+  color: #FFF;
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 22px; /* 122.222% */
+}
+
+.table__grid-cell {
+  padding: 15px 19px 22px 19px;
+  border: 1px #979797 solid;
+}
+
+.table__grid-os {
+  grid-area: os;
+}
+
+.table__grid-processor {
+  grid-area: processor;
+
+}
+
+.table__grid-memory {
+  grid-area: memory;
+
+}
+
+.table__grid-storage {
+  grid-area: storage;
+
+}
+
+.table__grid-graphics {
+  grid-area: graphics;
+
+}
+
+@media (max-width: 1023px) {
+  .page__requirements {
+    background-size: cover;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .table__grid-title {
+    font-size: 1.5em;
+  }
+  
+  .table__grid-text {
+    font-size: 1.16666666666666em;
+  }
+  .requirements__table {
+    flex-basis: auto;
+    max-width: 400px;
+  }
+.requirements__content {
+    align-items: center;
+    justify-content: center;
+  }
+  .table__grid-cell {
+    padding: 7.5px 9.5px 11px 9.5px;
+  }
+  .requirements__subtitle {
+    font-size: 1.5em;
+  }
+  
+  .requirements__title {
+    font-size: 1.75em;
+  
+  }
+}

@@ -7,8 +7,6 @@
 }
 
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -26,13 +24,12 @@ nav, footer, header, aside {
 
 html, body {
   min-height: 2000%;
-
   width: 100%;
   line-height: 1;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background: #191919;
   color: #FFF;
   font-size: 12px;
@@ -95,10 +92,10 @@ h1, h2, h3, h4, h5, h6 {
 
 ._icon {
   transition: all 0.5s;
-  &:hover {
-    transform: scale(0.9, 0.9);
-    box-shadow: 0px 1px 3px 1px #FFB548 inset;
-  }
+}
+._icon:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 0px 1px 3px 1px #FFB548 inset;
 }
 
 body.open {
@@ -134,4 +131,6 @@ body.open {
     font-size: 1.5em;
   }
 }
-
+a {
+  font-size: 50px;
+}

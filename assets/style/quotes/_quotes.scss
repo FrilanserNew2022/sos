@@ -1,0 +1,195 @@
+.page__quotes {
+    position: relative;
+    background: url('../assets/img/bg-image-fifth.png') 0 0/cover no-repeat;
+}
+.quotes__gradient {
+}
+.quotes__container {
+    padding-top: 11.1%;
+    padding-bottom: 10.2%;
+}
+.quotes__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quotes__content {
+    max-width: 435px;
+    margin-right: 20px;
+}
+
+.quotes__content-subtitle {
+    width: 100%;
+    text-align: left;
+}
+.quotes__content-title {
+    margin-top: 15px;
+    font-size: 4em;
+}
+.quotes__content-text {
+    margin-top: 45px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px; /* 122.222% */
+}
+.quotes__content-button {
+    display: block;
+    margin-top: 37px;
+    max-width: 260px;
+    padding: 18px 38px 20px 31px;
+    border-radius: 4px;
+    background: linear-gradient(195deg, #FFB548 11.27%, #F3AF34 90.4%);
+    color: #1A1917;
+    font-size: 1.3em;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.quotes__person {
+    flex: 1 1 auto;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.quotes__person-evan {
+}
+
+.quotes__person-jada {
+    margin-right: 29.3%;
+}
+
+.quotes__person-aaron {
+    margin-right: 9%;
+}
+
+.quot {
+    width: 452px;
+    padding: 11px 50px 21px 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    &:not(:first-child) {
+        margin-top: 30px;
+    }
+    position: relative;
+}
+
+@media (max-width: 1279px) {
+    .quotes__person-jada {
+        margin-right: 14.5%;
+    }
+    
+    .quotes__person-aaron {
+        margin-right: 4.5%;
+    }
+}
+
+@media (max-width: 1279px) {
+    .quot {
+        width: 350px;
+    }
+    .quotes__content {
+        max-width: 300px;
+    }
+}
+
+
+.quot__header {
+    display: flex;
+}
+.Evan {
+}
+.quot__header-icon {
+    position: relative;
+
+    & img {
+        position: relative;
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        z-index: 2;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: #FFB548;
+        transform: translate(9px, 0);
+    }
+    margin-right: 31px;
+}
+.quot__header-text {
+}
+.quot__header-name {
+    color: #FFB548;
+    font-family: Bebas Neue;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.quot__header-workPlace {
+    color: #FFF;
+    text-align: justify;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 122.222%; /* 22px */
+}
+.quot__content {
+    margin-top: 10px;
+}
+.quot__content-text {
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+.quot__content-date {
+    margin-top: 8px;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.5;
+}
+
+.quot__link-twitter {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+@media (max-width: 767px) {
+    .quotes__container {
+        flex-direction: column;
+    }
+    .quot {
+        width: 100%;
+    }
+    .quotes__content {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .quotes__content-title {
+        margin-top: 10px;
+    }
+    .quotes__content-text {
+        margin-top: 30px;
+    }
+    .quotes__content-button {
+        margin-top: 13px;
+    }
+
+    .quotes__person {
+        margin-top: 30px;
+    }
+    .quot {
+        &:not(:first-child) {
+            margin-top: 20px;
+            margin-right: 0;
+        }
+    }
+}

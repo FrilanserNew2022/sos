@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  width: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background: #191919;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #FFF;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+._container {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+._icon {
+  transition: all 0.5s;
+  &:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 0px 1px 3px 1px #FFB548 inset;
+  }
+}
+
+body.open {
+  overflow: hidden;
+}
+
+._title {
+  color: #FFF;
+  font-family: Bebas Neue;
+  font-size: 6.6666em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+._subtitle {
+  color: #FFF;
+  font-family: Bebas Neue;
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+.gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(81.01% 53.57% at 30.85% 38.65%, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.00) 19.2%, rgba(4, 5, 6, 0.52) 47.48%, #080A0B 99.74%);
+}
+
+@media (max-width: 1279.98px) {
+  ._title {
+    font-size: 2.75em;
+  }
+  ._subtitle {
+    font-size: 1.5em;
+  }
+}
