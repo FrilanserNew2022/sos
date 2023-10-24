@@ -70,10 +70,16 @@
   margin: 0 30px 0 0;
 }
 
-.header__lang-btn {
+.header__lang-btn-container {
   cursor: pointer;
   display: block;
   transition: all 0.5s;
+}
+
+.header__lang-arrow {
+  position: absolute;
+  transform: translate(50%, 5px) rotate(0);
+  transition: transform 0.5s;
 }
 
 .lang__list {
@@ -94,7 +100,7 @@
     }
     & .header__lang-arrow {
       color: #FFB548;
-      transform: translate(50%) rotate(180deg);
+      transform: translate(50%, 5px) rotate(180deg);
     }
     & .lang__list {
       visibility: visible;
@@ -103,10 +109,7 @@
     }
   }
 
-.header__lang-arrow {
-  transform: translate(50%) rotate(0);
-  transition: transform 0.5s;
-}
+
 
 .lang__list-item {
 

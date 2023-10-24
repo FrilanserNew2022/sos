@@ -43,16 +43,18 @@
                 </nav>
                 <div class="header__section-right">
                     <div class="header__lang-box header__lang">
-                        <a class="header__lang-btn">
-                            eng
+                        <div class="header__lang-btn-container">
+                            <a class="header__lang-btn">eng</a>
+                            
                             <svg class="header__lang-arrow" width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.48047 1.11331L5.12832 4.31369L8.77552 1.11331" fill="currentColor" stroke-width="1.4" stroke-linecap="round"/>
                             </svg>
-                        </a>
+                        </div>
                         <ul class="header__lang-list lang__list">
-                            <li class="lang__list-item">rus</li>
-                            <li class="lang__list-item">fra</li>
-                            <li class="lang__list-item">deu</li>
+                            <li class="lang__list-item eng" id="en-EN">eng</li>
+                            <li class="lang__list-item rus" id="ru-RU">rus</li>
+                            <li class="lang__list-item fra" id="fr-FR">fra</li>
+                            <li class="lang__list-item deu" id="de-DE">deu</li>
                         </ul>
                     </div>
                     <img src="assets/img/header-icon/vertical-line.png" alt="vertical line">
@@ -163,8 +165,7 @@
                                 <div class="rectangle__text-container content">
                                     <div class="content__title">
                                         <span class="rectangle__circle-first rectangle__circle"></span>
-
-                                        SURVIVE AT ALL COSTS
+                                        <div class="content__title-text">SURVIVE AT ALL COSTS</div>
                                     </div>
                                     <div class="content__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, aperiam commodi consequuntur, culpa ducimus incidunt nemo nulla officia, omnis ratione vitae!</div>
                                 </div>
@@ -172,16 +173,16 @@
 
                                     <div class="content__title content__title-second">
                                         <span class="rectangle__circle-second rectangle__circle"></span>
-                                        CREATE ALLIES AND ENEMIES
+                                        <div class="content__title-text">CREATE ALLIES AND ENEMIES</div>
                                     </div>
-                                    <div class="content__text content__text-second close">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, aperiam commodi consequuntur, culpa ducimus incidunt nemo nulla officia, omnis ratione vitae!</div>
+                                    <div class="content__text content__text-second">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, aperiam commodi consequuntur, culpa ducimus incidunt nemo nulla officia, omnis ratione vitae!</div>
                                 </div>
                                 <div class="rectangle__text-container content">
                                     <div class="content__title">
                                         <span class="rectangle__circle-third rectangle__circle"></span>
-                                        IMPRESS THE AUDIENCE
+                                        <div class="content__title-text">IMPRESS THE AUDIENCE</div>
                                     </div>
-                                    <div class="content__text content__text-third close">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, aperiam commodi consequuntur, culpa ducimus incidunt nemo nulla officia, omnis ratione vitae!</div>
+                                    <div class="content__text content__text-third">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, aperiam commodi consequuntur, culpa ducimus incidunt nemo nulla officia, omnis ratione vitae!</div>
                                 </div>
                             </div>
                     </div>
@@ -449,6 +450,6 @@
             </div>
         </footer>
     </div>
-    <script src="assets/js/index.js"></script>
+    <script type="module" src="assets/js/index.js"></script>
 </body>
 </html>

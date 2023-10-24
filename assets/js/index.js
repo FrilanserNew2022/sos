@@ -1,14 +1,7 @@
-
-let animationLang = false;
-document.querySelector('.header__lang-box').addEventListener('click', () => {
-    if(!animationLang){
-        document.querySelector('.header__lang-box').classList.toggle('open')
-    }
-    animationLang = true
-    setTimeout(() => {
-        animationLang = false
-    }, 500)
-});
+import ru from '../locales/rus.js';
+import en from '../locales/eng.js';
+import de from '../locales/deu.js';
+import fr from '../locales/fra.js';
 
 let menuOpen = false;
 
@@ -52,12 +45,132 @@ document.querySelector('.current').addEventListener('', () => {
     console.log(1)
 })
 
-setTimeout(() => {
-    document.querySelector('.rectangle__circle-second').style.background = '#FFFFFF';
-    document.querySelector('.content__text-second').classList.remove('close')
-}, 4800)
+// Узнаю текущий язык
+let currentLanguage = navigator.language;
 
-setTimeout(() => {
-    document.querySelector('.rectangle__circle-third').style.background = '#FFFFFF'
-    document.querySelector('.content__text-third').classList.remove('close')
-}, 8800)
+// Обновление контента по текущему языку
+function upgrateContent (language = currentLanguage) {
+    let translation;
+    document.querySelectorAll('.lang__list-item').forEach(el => {
+        el.style.display = 'block';
+    })
+    switch (language) {
+        case 'ru-RU':
+
+            translation = ru;
+            currentLanguage = 'ru-RU'
+            document.querySelector('.lang__list-item.rus').style.display = 'none'
+
+            break;
+        case 'en-EN':
+
+            translation = en;
+            currentLanguage = 'en-EN'
+            document.querySelector('.lang__list-item.eng').style.display = 'none'
+
+            break;
+
+        case 'de-DE':
+
+            translation = de;
+            currentLanguage = 'de-DE'
+            document.querySelector('.lang__list-item.deu').style.display = 'none'
+
+            break;
+        case 'fr-FR':
+
+            translation = fr;
+            currentLanguage = 'fr-FR'
+            document.querySelector('.lang__list-item.fra').style.display = 'none'
+
+            break;
+        default:
+
+            translation = en;
+            currentLanguage = 'en-EN'
+            document.querySelector('.lang__list-item.eng').style.display = 'none'
+
+            break;
+    }
+    objectDeployment(translation);
+}
+
+upgrateContent()
+
+function objectDeployment(object, positionInList = 0) {
+
+    if (typeof object !== 'object') return console.error('this not object');
+
+    for (let key in object) {
+        let elem = object[key];
+
+        if (Array.isArray(elem)) {
+            arrayDeployment(elem, key)
+        }
+
+        if (typeof elem === 'object' && !Array.isArray(elem) && elem !== null) {
+            objectDeployment(elem)
+        }
+
+        if(typeof elem === 'string'){
+            upgrateElement( document.querySelectorAll(`${key}`)[positionInList], elem)
+        }
+    }
+    return undefined;
+}
+
+function arrayDeployment(array, className) {
+    if(!Array.isArray(array) || typeof className !== 'string') return console.error('arrayDeployment, имя класса или массив был передан неверно.')
+
+    // Иттерируюсь по массиву и обновляем контент поэтапно (если элементов с одним классом  несколько)
+    for (let i = 0; i < array.length; i++) {
+        const element = (document.querySelectorAll(`${className}`))[i]
+        const elemContent = array[i];
+
+        if(typeof elemContent === 'object') {
+            objectDeployment(elemContent, i);
+        }
+        if (typeof elemContent === 'string'){
+            upgrateElement(element, elemContent)
+        }
+    }
+}
+
+function upgrateElement (elem, elemContent) {
+    elem.textContent = elemContent;
+}
+
+let animationLang = false;
+
+document.querySelector('.header__lang-box').addEventListener('click', () => {
+    if(!animationLang) {
+        const langBox = document.querySelector('.header__lang-box')
+        if(langBox.classList.contains('open')) {
+            langBox.classList.remove('open')
+            langBox.display = 'none'
+            document.querySelectorAll('.lang__list-item').forEach((el) => {
+                el.removeEventListener('click', listenerForLanguageChange)
+            })
+        } else {
+            langBox.classList.add('open')
+            langBox.display = 'block'
+            document.querySelectorAll('.lang__list-item').forEach((el) => {
+                el.addEventListener('click', listenerForLanguageChange)
+            })
+        }        
+    }
+    animationLang = true
+    setTimeout(() => {
+        animationLang = false
+    }, 500)
+});
+
+function listenerForLanguageChange (event) {  
+    console.log(event.target)
+    const elemId = event.target.id
+    
+    if(typeof elemId !== 'string') {
+        return console.error('id is not define')
+    }
+    upgrateContent(elemId)
+}

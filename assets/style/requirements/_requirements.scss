@@ -91,21 +91,22 @@
 
 @media (max-width: 767px) {
   .table__grid-title {
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
   
   .table__grid-text {
-    font-size: 1.16666666666666em;
+    font-size: 1em;
   }
   .requirements__table {
     flex-basis: auto;
-    max-width: 400px;
+    max-width: 100%;
   }
 .requirements__content {
     align-items: center;
     justify-content: center;
   }
   .table__grid-cell {
+    max-width: 100%;
     padding: 7.5px 9.5px 11px 9.5px;
   }
   .requirements__subtitle {
@@ -114,6 +115,7 @@
   
   .requirements__title {
     font-size: 1.75em;
-  
+    max-width: 100%;
+    word-wrap: break-word;
   }
 }

@@ -136,7 +136,7 @@ body.open {
 
 @media (max-width: 1279.98px) {
   ._title {
-    font-size: 2.75em;
+    font-size: 2.5em;
   }
   ._subtitle {
     font-size: 1.5em;
@@ -212,10 +212,16 @@ body.open {
   margin: 0 30px 0 0;
 }
 
-.header__lang-btn {
+.header__lang-btn-container {
   cursor: pointer;
   display: block;
   transition: all 0.5s;
+}
+
+.header__lang-arrow {
+  position: absolute;
+  transform: translate(50%, 5px) rotate(0);
+  transition: transform 0.5s;
 }
 
 .lang__list {
@@ -235,17 +241,12 @@ body.open {
 }
 .header__lang-box.open .header__lang-arrow {
   color: #FFB548;
-  transform: translate(50%) rotate(180deg);
+  transform: translate(50%, 5px) rotate(180deg);
 }
 .header__lang-box.open .lang__list {
   visibility: visible;
   opacity: 1;
   transform: translate(-5px, 14px);
-}
-
-.header__lang-arrow {
-  transform: translate(50%) rotate(0);
-  transition: transform 0.5s;
 }
 
 .lang__list-item:hover {
@@ -568,6 +569,7 @@ body.open {
 }
 
 .royal__body {
+  width: 100%;
   flex-basis: 42.4615%;
 }
 
@@ -636,7 +638,7 @@ body.open {
     font-size: 1.5em;
   }
   .royal__body-title {
-    font-size: 2.75em;
+    font-size: 2.5em;
   }
   .royal__body-text {
     max-width: 100%;
@@ -790,6 +792,27 @@ body.open {
   background: #FFFFFF;
 }
 
+.rectangle__circle-second {
+  animation: 5s 1 normal circleFill;
+  animation-fill-mode: forwards;
+}
+
+.rectangle__circle-third {
+  animation: 10s 1 normal circleFill;
+  animation-fill-mode: forwards;
+}
+
+@keyframes circleFill {
+  0% {
+    background: none;
+  }
+  90% {
+    background: none;
+  }
+  100% {
+    background: #FFFFFF;
+  }
+}
 .rectangle__declaration-container {
   height: 416px;
   position: relative;
@@ -819,12 +842,15 @@ body.open {
 }
 
 .content__title {
+  position: relative;
+}
+
+.content__title-text {
   color: #FFB548;
   font-family: Bebas Neue;
   font-size: 3em;
   font-weight: 700;
   letter-spacing: 2px;
-  position: relative;
 }
 
 .content__text {
@@ -839,13 +865,33 @@ body.open {
   line-height: 22px; /* 122.222% */
   transition: all 0.75s;
 }
-.content__text.close {
+
+.content__text-second {
   transform: translate(-100%, 0);
   visibility: hidden;
+  animation: 5s 1 normal textOpen;
+  animation-fill-mode: forwards;
 }
 
+.content__text-third {
+  transform: translate(-100%, 0);
+  visibility: hidden;
+  animation: 10s 1 normal textOpen;
+  animation-fill-mode: forwards;
+}
+
+@keyframes textOpen {
+  80% {
+    transform: translate(-100%, 0);
+    visibility: hidden;
+  }
+  100% {
+    transform: translate(0, 0);
+    visibility: visible;
+  }
+}
 @media (max-width: 1279.98px) {
-  .content__title {
+  .content__title-text {
     font-size: 1.8333333333em;
   }
   .content__text {
@@ -868,9 +914,18 @@ body.open {
   .rectangle__empty-flex {
     display: none;
   }
+  .rectangle__content-flex {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+    align-items: end;
+  }
+  .rectangle__title {
+    max-width: 100%;
+    word-wrap: break-word;
+  }
   .rectangle__container {
-    padding: 50px 15px 50px 50px;
-    justify-content: start;
+    padding: 50px 15px 50px 40px;
   }
   .rectangle__declaration-container {
     height: auto;
@@ -997,20 +1052,21 @@ body.open {
 }
 @media (max-width: 767px) {
   .table__grid-title {
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
   .table__grid-text {
-    font-size: 1.1666666667em;
+    font-size: 1em;
   }
   .requirements__table {
     flex-basis: auto;
-    max-width: 400px;
+    max-width: 100%;
   }
   .requirements__content {
     align-items: center;
     justify-content: center;
   }
   .table__grid-cell {
+    max-width: 100%;
     padding: 7.5px 9.5px 11px 9.5px;
   }
   .requirements__subtitle {
@@ -1018,6 +1074,8 @@ body.open {
   }
   .requirements__title {
     font-size: 1.75em;
+    max-width: 100%;
+    word-wrap: break-word;
   }
 }
 .page__quotes {
@@ -1195,7 +1253,9 @@ body.open {
     align-items: center;
   }
   .quotes__content-title {
+    max-width: 100%;
     margin-top: 10px;
+    word-wrap: break-word;
   }
   .quotes__content-text {
     margin-top: 30px;
