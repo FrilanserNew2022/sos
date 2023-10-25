@@ -3,6 +3,8 @@ import en from '../locales/eng.js';
 import de from '../locales/deu.js';
 import fr from '../locales/fra.js';
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------
+
 let menuOpen = false;
 
 document.querySelector('.menu__burger').addEventListener('click', () => {
@@ -11,11 +13,11 @@ document.querySelector('.menu__burger').addEventListener('click', () => {
         document.querySelector('.header__lang-box').classList.remove('open')
         document.querySelector('.header__menu').classList.toggle('open')
         document.querySelector('.central__line').classList.toggle('open')
+        menuOpen = true
+        setTimeout(() => {
+            menuOpen = false
+        }, 1000)
     }
-    menuOpen = true
-    setTimeout(() => {
-        menuOpen = false
-    }, 1000)
 })
 
 let currentImg = 0;
@@ -44,6 +46,108 @@ document.querySelector('.main__button-next').addEventListener('click', () => {
 document.querySelector('.current').addEventListener('', () => {
     console.log(1)
 })
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------
+
+let currentSlide = 0;
+
+let animationSlide = false;
+
+const slides = document.querySelectorAll('.slide');
+
+const arrowRigth = document.querySelector('.slider__arrow-rigth');
+
+const arrowLeft = document.querySelector('.slider__arrow-left')
+
+arrowRigth.addEventListener('click', () => {
+    if(!animationSlide) {
+        arrowLeft.style.visibility = 'visible'
+        currentSlide += 1;
+        if(currentSlide === 3) {
+            arrowRigth.style.visibility = 'hidden';
+        }
+        arrowLeft.style.visibility = 'visible'
+
+        slides.forEach((el, index) => {
+
+            el.style.position = 'absolute';
+
+            if(index < currentSlide) {
+                el.style.transform = `translate(${(index * 20) - (currentSlide * 20)}px, 0) scale(1, ${1 + (index * 0.05 - currentSlide * 0.05)}`
+            }
+            if(index === currentSlide) {
+                el.style.cssText += `
+                position: relative;
+                transform: translate(0, 0) scale(1, 1);
+                z-index: 5;
+            `
+            }
+            if(index > currentSlide) {
+                el.style.transform = `translate(${(index * 20) - (currentSlide * 20)}px, 0) scale(1, ${1 - (index * 0.05 - currentSlide * 0.05)}`
+            }
+        })
+
+        animationSlide = true;
+        setTimeout(() => {
+        animationSlide = false
+    }, 1000)
+    }
+})
+
+arrowLeft.addEventListener('click', () => {
+    if(!animationSlide) {
+        arrowLeft.style.visibility = 'visible'
+        currentSlide -= 1;
+        if(currentSlide === 0) {
+            arrowLeft.style.visibility = 'hidden';
+        }
+        arrowRigth.style.visibility = 'visible'
+
+        slides.forEach((el, index) => {
+
+            el.style.position = 'absolute'
+
+            if(index < currentSlide) {
+                el.style.transform = `translate(${(index * 20) - (currentSlide * 20)}px, 0) scale(1, ${1 + (index * 0.05 - currentSlide * 0.05)}`
+            }
+
+            if(index === currentSlide) {
+                el.style.cssText += `
+                    position: relative;
+                    transform: translate(0, 0) scale(1, 1);
+                    z-index: 5;
+                `
+            }
+
+            if(index > currentSlide) {
+                el.style.transform = `translate(${(index * 20) - (currentSlide * 20)}px, 0) scale(1, ${1 - (index * 0.05 - currentSlide * 0.05)}`
+                el.style.zIndex = `${el.id}`
+            }
+        })
+        animationSlide = true;
+        setTimeout(() => {
+        animationSlide = false
+    }, 1000)
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Узнаю текущий язык
 let currentLanguage = navigator.language;
