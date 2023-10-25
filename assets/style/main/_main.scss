@@ -7,6 +7,10 @@
   justify-content: space-between;
 }
 
+.main__gradient {
+  z-index: 4;
+}
+
 .img__big {
   width: 100%;
   height: 100%;
@@ -61,18 +65,9 @@
 
 
 
-
-
-.main__liner-gradient {
-  background: linear-gradient(#FFB54800, #342C1DCD, #08090A);
-  z-index: 2;
-}
-
-
-
 .main__container {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   margin: auto;
   display: flex;
   flex-direction: column;

@@ -7,7 +7,9 @@ import fr from '../locales/fra.js';
 
 let menuOpen = false;
 
-document.querySelector('.menu__burger').addEventListener('click', () => {
+document.querySelector('.menu__burger').addEventListener('click', closeAndOpenMenu)
+
+function closeAndOpenMenu () {
     if(!menuOpen){
         document.body.classList.toggle('open')
         document.querySelector('.header__lang-box').classList.remove('open')
@@ -18,7 +20,7 @@ document.querySelector('.menu__burger').addEventListener('click', () => {
             menuOpen = false
         }, 1000)
     }
-})
+}
 
 let currentImg = 0;
 
@@ -46,6 +48,61 @@ document.querySelector('.main__button-next').addEventListener('click', () => {
 document.querySelector('.current').addEventListener('', () => {
     console.log(1)
 })
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------
+
+document.querySelectorAll('.item__scroll').forEach((el) => {
+    if(el.classList.contains('header__item')) {
+        el.addEventListener('click', () => {
+            closeAndOpenMenu()
+            scrollToBlock(el.id)
+        })
+    } else {
+        el.addEventListener('click', () => {
+            scrollToBlock(el.id)
+        })
+    }
+})
+
+function scrollToBlock (className) {
+    console.log(typeof className)
+    document.querySelector(`${className}`).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -131,6 +188,7 @@ arrowLeft.addEventListener('click', () => {
     }
 })
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -147,6 +205,26 @@ arrowLeft.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 // Узнаю текущий язык
@@ -278,3 +356,5 @@ function listenerForLanguageChange (event) {
     }
     upgrateContent(elemId)
 }
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------

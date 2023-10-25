@@ -14,7 +14,7 @@
   letter-spacing: 1.2px;
   text-transform: uppercase;
   }
-  z-index: 5  ;
+  z-index: 6;
 }
 
 .header__container {
@@ -163,7 +163,7 @@
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 0;
-    z-index: 2;
+    z-index: 6;
     justify-content: start;
     &.open {
       width: 100vw;
