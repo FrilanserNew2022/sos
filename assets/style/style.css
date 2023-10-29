@@ -7,6 +7,8 @@
 }
 
 *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -1402,7 +1404,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 4px;
   background: linear-gradient(195deg, #FFB548 11.27%, #F3AF34 90.4%);
   font-size: 1.3333333333em;
-  color: #000000;
 }
 
 @media (max-width: 1023px) {
@@ -1583,3 +1584,5 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
